@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — Student Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">✓</span> TaskFlow</a>
+      <span class="tag">STUDENT PRODUCTIVITY</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+      <h1>Make room for<br><span>what matters.</span></h1>
+      <p class="subtitle">Plan your tasks, keep track of deadlines, and make steady progress every day.</p>
+    </section>
+
+    <section class="stats" aria-label="Task statistics">
+      <article class="stat-card"><span class="stat-label">TOTAL TASKS</span><strong id="totalCount">0</strong></article>
+      <article class="stat-card"><span class="stat-label">COMPLETED</span><strong id="doneCount">0</strong></article>
+      <article class="stat-card"><span class="stat-label">TO DO</span><strong id="todoCount">0</strong></article>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading">
+        <div><p class="eyebrow">STAY ORGANIZED</p><h2>My tasks</h2></div>
+        <span class="today" id="todayLabel"></span>
+      </div>
+
+      <form id="taskForm" class="task-form">
+        <input id="taskInput" type="text" maxlength="90" placeholder="What do you need to do?" aria-label="New task" required />
+        <select id="priorityInput" aria-label="Task priority">
+          <option value="Normal">Normal</option>
+          <option value="Important">Important</option>
+          <option value="Urgent">Urgent</option>
+        </select>
+        <button type="submit">Add task <span>＋</span></button>
+      </form>
+
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="todo">To do</button>
+        <button class="filter" data-filter="done">Completed</button>
+      </div>
+
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyState" class="empty">No tasks yet. Add your first task above.</p>
+    </section>
+
+    <footer>Built as a beginner front-end portfolio project · HTML, CSS & JavaScript</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
